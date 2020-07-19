@@ -1,0 +1,23 @@
+type User {
+	id: String!
+	name: String!
+	email: String!
+	password: String!
+	favorites: [Movie]
+}
+
+type Movie {
+	id: String!
+	name: String!
+}
+
+type Query {
+	users: [User]
+	movies: [Movie]
+}
+
+type Mutation {
+	addUser (name: String!, email: String!, password: String!): User!
+	addMovie (name: String!): Movie!
+	addUserMovieFavorite (idUser: String!, idMovie: String!): User!
+}
